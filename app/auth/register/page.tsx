@@ -1,8 +1,9 @@
 "use client"
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useRouter } from 'next/navigation'
+import { AuthContext } from '../../context/AuthContext'
 
 export default function RegisterPage(){
   const [name, setName] = useState('')
@@ -16,6 +17,7 @@ export default function RegisterPage(){
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
+  const { login } = useContext(AuthContext)
 
   function addSkillFromInput(){
     const s = skillInput.trim()
@@ -94,9 +96,14 @@ export default function RegisterPage(){
         avatar,
         createdAt: new Date().toISOString()
       }
+      // persist and login via AuthContext so Navbar updates immediately
       localStorage.setItem('skillsync:user', JSON.stringify(user))
-      // Send the user to login so they can authenticate, then to /profile
-      router.push('/auth/login?next=/profile')
+      try {
+        if (login) login(user)
+      } catch (e) {
+        // fallback handled by localStorage
+      }
+      router.push('/profile')
     } catch (err) {
       console.error(err)
       setLoading(false)

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Protected from '../components/Protected'
 
 type UserProfile = {
   id?: string
@@ -118,13 +119,16 @@ export default function ProfilePage(){
   }
 
   if (!user) {
+    // Protected wrapper will redirect unauthenticated users; fallback UI while redirecting
     return (
-      <section>
-        <h1 className="text-2xl font-bold">Create your profile</h1>
-        <div className="mt-4 card">
-          <p className="text-sm">No profile found. Please <button className="text-primary underline" onClick={() => router.push('/auth/login?next=/profile')}>sign in to create your profile</button> to get started.</p>
-        </div>
-      </section>
+      <Protected redirectTo="/auth/login">
+        <section>
+          <h1 className="text-2xl font-bold">Create your profile</h1>
+          <div className="mt-4 card">
+            <p className="text-sm">Redirecting to sign in…</p>
+          </div>
+        </section>
+      </Protected>
     )
   }
 
