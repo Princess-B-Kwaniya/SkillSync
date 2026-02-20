@@ -33,31 +33,26 @@ export default function Navbar(){
     }
   }, [user])
 
-  const [svgError, setSvgError] = useState(false)
-  const [pngError, setPngError] = useState(false)
+  const [open, setOpen] = useState(false)
+  const { user, logout } = useContext(AuthContext)
+  const [isAuth, setIsAuth] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="glass-nav sticky top-0 sm:top-4 z-40 w-full mx-auto container px-4 sm:px-6 lg:px-8 rounded-lg sm:rounded-full">
       <div className="flex items-center justify-between py-3 px-2 md:px-6">
         <Link href="/" className="flex items-center gap-3">
           {/** Use `/logo.png` (place your attached image at `public/logo.png`) with graceful fallback */}
-          {!svgError ? (
-            // prefer vector logo when available
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src="/logo.svg"
-              alt="SkillSync"
-              className="w-9 h-9 rounded-md object-cover"
-              onError={() => setSvgError(true)}
-            />
-          ) : !pngError ? (
-            // fall back to raster if svg not present
+          {/** Use `/logo.png` (place your attached image at `public/logo.png`) with graceful fallback */}
+          {!imgError ? (
+            // image may not exist in repo until user adds it to `public/logo.png`
+            // client-side only component so this runs in browser
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src="/logo.png"
               alt="SkillSync"
               className="w-9 h-9 rounded-md object-cover"
-              onError={() => setPngError(true)}
+              onError={() => setImgError(true)}
             />
           ) : (
             <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white font-bold">SK</div>
