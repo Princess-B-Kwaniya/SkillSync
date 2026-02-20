@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SkillSync logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#12B2D6"/>
+      <stop offset="100%" stop-color="#00A7D4"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F26A2D"/>
+      <stop offset="100%" stop-color="#F7A21C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: stylized S made from two rounded strokes -->
+  <g transform="translate(80,30) scale(0.6)">
+    <path d="M44 20c18-12 62-40 86-10 22 26-6 56-36 70-32 15-74 26-96 54-18 22-12 56 14 68 26 12 58-2 78-18" stroke="url(#g1)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M46 160c18 12 62 40 86 10 22-26-6-56-36-70-32-15-74-26-96-54-18-22-12-56 14-68 26-12 58 2 78 18" stroke="url(#g2)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(0,10)"/>
+  </g>
+
+  <!-- compact wordmark for larger sizes; hidden by small favicons but useful in previews -->
+  <g transform="translate(40,230)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="44" fill="#0A1A3A">Skill</text>
+    <text x="150" y="0" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="44" fill="#F7A21C">Sync</text>
+  </g>
+</svg>
