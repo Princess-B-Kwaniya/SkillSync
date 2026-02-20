@@ -31,7 +31,7 @@ export default function Navbar(){
       window.removeEventListener('storage', onStorage)
       window.removeEventListener('skillsync:auth', onStorage)
     }
-  }, [])
+  }, [user])
 
   return (
     <header className="glass-nav sticky top-0 sm:top-4 z-40 w-full mx-auto container px-4 sm:px-6 lg:px-8 rounded-lg sm:rounded-full">
