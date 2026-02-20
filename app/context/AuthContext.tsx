@@ -1,6 +1,7 @@
 "use client"
 
 import React, { createContext, useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 type User = any
 
@@ -12,6 +13,7 @@ export const AuthContext = createContext<{
 
 export default function AuthProvider({ children }: { children: React.ReactNode }){
   const [user, setUser] = useState<User | null>(null)
+  const router = useRouter()
 
   useEffect(() => {
     try {
@@ -38,6 +40,12 @@ export default function AuthProvider({ children }: { children: React.ReactNode }
       localStorage.removeItem('skillsync:user')
       setUser(null)
       window.dispatchEvent(new Event('skillsync:auth'))
+      // navigate back to home after logout
+      try {
+        router.push('/')
+      } catch (e) {
+        // ignore navigation errors
+      }
     } catch (e){
       console.error(e)
     }
