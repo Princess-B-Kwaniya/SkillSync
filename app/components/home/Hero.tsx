@@ -6,8 +6,8 @@ export default function Hero(){
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
           <div className="flex-1">
-            <h1 className="text-2xl md:text-4xl font-extrabold text-darkText">Find Your First Job. Build Your Future.</h1>
-            <p className="mt-6 md:mt-4 text-lg md:text-xl font-medium text-darkText/80">Discover internships, entry-level roles & career paths tailored for youth. SkillSync matches your skills to jobs and recommends ways to improve.</p>
+            <h1 className="text-2xl md:text-4xl font-extrabold text-darkText">Where Skills Meet Opportunity.</h1>
+            <p className="mt-6 md:mt-4 text-lg md:text-xl font-medium text-darkText/80">Empowering youth through intelligent skill-based matching. We connect students and graduates to internships and entry-level roles aligned with their strengths — while guiding them on how to improve and grow.</p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-darkText">
               <div className="flex items-center gap-3 bg-white/90 rounded-lg p-3 shadow-sm">
@@ -19,7 +19,7 @@ export default function Hero(){
                 </div>
                 <div>
                   <div className="text-lg md:text-xl font-extrabold text-primary">500+</div>
-                  <div className="text-sm text-darkText/80">Entry-Level Roles</div>
+                  <div className="text-sm text-darkText/80">Curated Opportunities</div>
                 </div>
                 <div className="ml-auto text-green-600 font-bold">✔</div>
               </div>
@@ -33,7 +33,7 @@ export default function Hero(){
                 </div>
                 <div>
                   <div className="text-lg md:text-xl font-extrabold text-primary">120+</div>
-                  <div className="text-sm text-darkText/80">Internships</div>
+                  <div className="text-sm text-darkText/80">Active Internships</div>
                 </div>
                 <div className="ml-auto text-green-600 font-bold">✔</div>
               </div>
@@ -47,7 +47,7 @@ export default function Hero(){
                 </div>
                 <div>
                   <div className="text-lg md:text-xl font-extrabold text-primary">80%</div>
-                  <div className="text-sm text-darkText/80">Skill-Based Matching Accuracy</div>
+                  <div className="text-sm text-darkText/80">AI-Driven Skill Match Accuracy</div>
                 </div>
                 <div className="ml-auto text-green-600 font-bold">✔</div>
               </div>
