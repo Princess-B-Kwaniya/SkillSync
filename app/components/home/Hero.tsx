@@ -6,8 +6,8 @@ export default function Hero(){
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
           <div className="flex-1">
-            <h1 className="text-2xl md:text-4xl font-extrabold text-darkText">Where Skills Meet Opportunity.</h1>
-            <p className="mt-6 md:mt-4 text-lg md:text-xl font-medium text-darkText/80">Empowering youth through intelligent skill-based matching. We connect students and graduates to internships and entry-level roles aligned with their strengths — while guiding them on how to improve and grow.</p>
+            <h1 className="text-2xl md:text-4xl font-extrabold text-darkText">SkillSync — Where Skills Meet Opportunity</h1>
+            <p className="mt-6 md:mt-4 text-lg md:text-xl font-medium text-darkText/80">Empowering students and recent graduates through intelligent skill-based matching. We connect early-career talent to internships and entry-level roles aligned with their strengths — while guiding them on how to grow and stay competitive.</p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-darkText">
               <div className="flex items-center gap-3 bg-white/90 rounded-lg p-3 shadow-sm">
