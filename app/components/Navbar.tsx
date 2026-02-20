@@ -1,17 +1,22 @@
 "use client"
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
+import { AuthContext } from '../context/AuthContext'
 
 export default function Navbar(){
   const [open, setOpen] = useState(false)
+  const { user, logout } = useContext(AuthContext)
   const [isAuth, setIsAuth] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
-    function check() {
+    // reflect context user in local state for UI convenience
+    setIsAuth(Boolean(user))
+    // also listen for cross-window changes (rare) and custom auth events
+    function onStorage(e: StorageEvent | Event) {
       try {
         const raw = localStorage.getItem('skillsync:user')
         setIsAuth(Boolean(raw))
@@ -20,12 +25,12 @@ export default function Navbar(){
       }
     }
 
-    check()
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === 'skillsync:user') check()
-    }
     window.addEventListener('storage', onStorage)
-    return () => window.removeEventListener('storage', onStorage)
+    window.addEventListener('skillsync:auth', onStorage)
+    return () => {
+      window.removeEventListener('storage', onStorage)
+      window.removeEventListener('skillsync:auth', onStorage)
+    }
   }, [])
 
   return (
@@ -49,7 +54,7 @@ export default function Navbar(){
               <Link href="/resources" className="text-sm text-darkText hover:text-primary transition">Career Tips</Link>
               <Link href="/dashboard" className="text-sm text-darkText hover:text-primary transition">Dashboard</Link>
               <Link href="/profile" className="text-sm text-darkText hover:text-primary transition">Profile</Link>
-              <button onClick={() => { localStorage.removeItem('skillsync:user'); setIsAuth(false) }} className="hidden lg:inline-block text-sm text-darkText px-3 py-1 rounded-md">Logout</button>
+              <button onClick={() => { logout() }} className="hidden lg:inline-block text-sm text-darkText px-3 py-1 rounded-md">Logout</button>
             </>
           ) : (
             <>
@@ -76,7 +81,7 @@ export default function Navbar(){
               <Link href="/dashboard" className="flex items-center gap-3"><span>📊</span> Dashboard</Link>
               <Link href="/profile" className="flex items-center gap-3"><span>👤</span> Profile</Link>
               <div className="pt-2 border-t">
-                <button onClick={() => { localStorage.removeItem('skillsync:user'); setIsAuth(false) }} className="inline-block text-darkText px-3 py-1 rounded-md">Logout</button>
+                <button onClick={() => { logout() }} className="inline-block text-darkText px-3 py-1 rounded-md">Logout</button>
               </div>
             </>
           ) : (

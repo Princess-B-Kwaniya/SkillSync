@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SavedJobsProvider from './components/SavedJobsProvider'
+import AuthProvider from './context/AuthContext'
 
 export const metadata = {
   title: 'SKILLSYNC - Employment Intelligence',
@@ -14,11 +15,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <SavedJobsProvider>
-            <main className="flex-1 container py-12">{children}</main>
-            <Footer />
-          </SavedJobsProvider>
+          <AuthProvider>
+            <Navbar />
+            <SavedJobsProvider>
+              <main className="flex-1 container py-12">{children}</main>
+              <Footer />
+            </SavedJobsProvider>
+          </AuthProvider>
         </div>
       </body>
     </html>

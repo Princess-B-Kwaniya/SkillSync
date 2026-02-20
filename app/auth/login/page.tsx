@@ -1,8 +1,9 @@
 "use client"
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { AuthContext } from '../../context/AuthContext'
 
 export default function LoginPage(){
   const [email, setEmail] = useState('')
@@ -12,6 +13,8 @@ export default function LoginPage(){
   const searchParams = useSearchParams()
   const next = searchParams?.get('next') ?? undefined
 
+  const { login } = useContext(AuthContext)
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
@@ -19,7 +22,8 @@ export default function LoginPage(){
     // Minimal client-side "login" for demo: store a user object in localStorage
     try {
       const user = { email, name: email.split('@')[0] || 'User' }
-      localStorage.setItem('skillsync:user', JSON.stringify(user))
+      // use context login so Navbar updates immediately
+      login(user)
       // Redirect to the requested page after login, default to main page
       router.push(next || '/')
     } catch (err) {
