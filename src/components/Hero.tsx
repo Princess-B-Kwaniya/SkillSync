@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="relative pt-44 pb-24 overflow-hidden">
@@ -23,12 +25,12 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto px-10 py-4 bg-primary text-white font-bold rounded-xl shadow-glow hover:shadow-glow-lg transition-all text-lg">
+          <Link href="/signup" className="w-full sm:w-auto px-10 py-4 bg-primary text-white font-bold rounded-xl shadow-glow hover:shadow-glow-lg transition-all text-lg">
             Create Your Profile
-          </button>
-          <button className="w-full sm:w-auto px-10 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-lg border border-slate-200">
+          </Link>
+          <Link href="#features" className="w-full sm:w-auto px-10 py-4 bg-slate-100 text-slate-700 font-bold rounded-xl hover:bg-slate-200 transition-all text-lg border border-slate-200">
             Explore the Platform
-          </button>
+          </Link>
         </div>
 
         {/* Hero Line Art Visual */}
