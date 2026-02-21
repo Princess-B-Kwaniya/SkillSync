@@ -7,19 +7,19 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10 text-center">
         <h2 className="text-4xl md:text-5xl font-black text-white mb-8">
-          Ready to close the gap?
+          Begin Your Career Intelligence Journey
         </h2>
         <p className="text-slate-400 text-lg mb-12 max-w-xl mx-auto">
-          Join 50,000+ graduates who are already building the skills that
-          actually get you hired.
+          Create your profile, upload your CV, and receive your first AI-powered
+          job matches and Skills Gap Report within minutes.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
           <button className="w-full sm:w-auto px-12 py-4 bg-primary text-white font-bold rounded-xl shadow-glow hover:bg-primary/90 transition-all text-xl">
-            Join the Revolution
+            Create Your Account
           </button>
           <button className="w-full sm:w-auto px-12 py-4 border border-slate-700 text-white font-bold rounded-xl hover:bg-slate-800 transition-all text-xl">
-            Partner with Us
+            Contact Us
           </button>
         </div>
 
@@ -52,13 +52,13 @@ export default function Footer() {
               className="hover:text-primary transition-colors"
               href="#"
             >
-              Career Blog
+              Documentation
             </a>
             <a
               className="hover:text-primary transition-colors"
               href="#"
             >
-              Help Center
+              Support
             </a>
           </div>
 
@@ -89,8 +89,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 text-center text-slate-600 text-xs">
-          © 2024 SkillSync Inc. All rights reserved. Powered by the next
-          generation of talent.
+          &copy; 2026 SkillSync. All rights reserved. Career Intelligence
+          Platform.
         </div>
       </div>
     </footer>

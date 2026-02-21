@@ -1,51 +1,52 @@
 const steps = [
   {
     number: "1",
-    title: "Skill Mapping",
+    title: "Register",
     description:
-      "Analyze your degree and identify critical industry gaps.",
+      "Create your account via email or sign in with Google or LinkedIn using OAuth 2.0.",
     isLast: false,
   },
   {
     number: "2",
-    title: "Custom Path",
+    title: "Build Profile",
     description:
-      "Generate a personalized learning roadmap in minutes.",
+      "Upload your CV or connect LinkedIn. Our AI parses and populates your competency profile automatically.",
     isLast: false,
   },
   {
     number: "3",
-    title: "Active Build",
+    title: "Set Target Roles",
     description:
-      "Develop real features for actual open-source projects.",
+      "Designate one or more target roles. The system generates your Skills Gap Report and Match Results.",
     isLast: false,
   },
   {
     number: "4",
-    title: "Validation",
+    title: "Review Matches",
     description:
-      "Pass technical gatekeepers via peer-reviewed output.",
+      "Explore ranked job listings with Match Scores, breakdown panels, and competitive benchmarking data.",
     isLast: false,
   },
   {
     number: "5",
-    title: "Deployment",
+    title: "Follow Roadmap",
     description:
-      "Automatic placement in our network of high-growth tech firms.",
+      "Begin your personalised learning roadmap with sequenced courses, projects, and certification guidance.",
     isLast: true,
   },
 ];
 
 export default function TransitionSteps() {
   return (
-    <section className="py-24 bg-background-light overflow-hidden" id="path">
+    <section className="py-24 bg-background-light overflow-hidden" id="how-it-works">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-            Your 5-Step Transition
+            How It Works
           </h2>
           <p className="text-slate-500">
-            From academic theory to professional excellence.
+            From registration to your first personalised job matches in under
+            ten minutes.
           </p>
         </div>
 
