@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-navy-deep py-24 relative overflow-hidden">
@@ -15,12 +17,12 @@ export default function Footer() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
-          <button className="w-full sm:w-auto px-12 py-4 bg-primary text-white font-bold rounded-xl shadow-glow hover:bg-primary/90 transition-all text-xl">
+          <Link href="/signup" className="w-full sm:w-auto px-12 py-4 bg-primary text-white font-bold rounded-xl shadow-glow hover:bg-primary/90 transition-all text-xl">
             Create Your Account
-          </button>
-          <button className="w-full sm:w-auto px-12 py-4 border border-slate-700 text-white font-bold rounded-xl hover:bg-slate-800 transition-all text-xl">
+          </Link>
+          <Link href="/contact" className="w-full sm:w-auto px-12 py-4 border border-slate-700 text-white font-bold rounded-xl hover:bg-slate-800 transition-all text-xl">
             Contact Us
-          </button>
+          </Link>
         </div>
 
         <hr className="border-slate-800 mb-12" />

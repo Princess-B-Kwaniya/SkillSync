@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl">
@@ -27,12 +29,12 @@ export default function Navbar() {
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <button className="text-sm font-bold text-slate-700 hover:text-primary px-4 py-2 transition-colors">
+          <Link href="/signin" className="text-sm font-bold text-slate-700 hover:text-primary px-4 py-2 transition-colors">
             Sign In
-          </button>
-          <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-glow hover:shadow-glow-lg hover:scale-105 transition-all">
+          </Link>
+          <Link href="/signup" className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-glow hover:shadow-glow-lg hover:scale-105 transition-all">
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
